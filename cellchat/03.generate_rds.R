@@ -1,0 +1,18 @@
+library(CellChat)
+library(patchwork)
+load('cell_chat_work_dcm.RData')
+cellChat <- computeCommunProbPathway(cellChat)
+cellChat <- aggregateNet(cellChat)
+saveRDS(cellChat,'dcm_res.rds')
+
+rm(list=ls())
+load('cell_chat_work_hcm.RData')
+cellChat <- computeCommunProbPathway(cellChat)
+cellChat <- aggregateNet(cellChat)
+saveRDS(cellChat,'hcm_res.rds')
+rm(list=ls())
+
+load('cell_chat_work_healthy.RData')
+cellChat <- computeCommunProbPathway(cellChat)
+cellChat <- aggregateNet(cellChat)
+saveRDS(cellChat,'healthy_res.rds')
