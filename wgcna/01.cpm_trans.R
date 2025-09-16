@@ -1,0 +1,5 @@
+library(edgeR)
+data<-read.table('/data/lixingyu/wgcna/pseudo_bulk/dcm_hcm_healthy/vcm/vcm/vcm/combined_pseudobulk.vcm.sample.filtered.PG.xls',check.names=F,comment.char='*')
+data<-cpm(data,log=T)
+res<-t(data)
+write.csv(res,'wgcna_input.csv',quote=F)
